@@ -5,67 +5,52 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Solution 1
-// const palindrome = (str) => {
-//   let revStr = str.split("").reverse().join("");
-//   if (revStr === str) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// };
-// console.log(palindrome("abba"));
+const palindrome1 = (str) => {
+  let revStr = str.split("").reverse().join("");
+  if (revStr === str) {
+    return true;
+  } else {
+    return false;
+  }
+};
+console.log(palindrome("abba"));
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Solution 2
-// const palindrom = (str) => {
-// let strArr = [];
-// for (let i = str.length; i > 0; i--) {
-//   strArr.push(str[i - 1]);
-// }
-// let revStr = strArr.join("");
+const palindrom2 = (str) => {
+  let strArr = [];
+  for (let i = str.length; i > 0; i--) {
+    strArr.push(str[i - 1]);
+  }
+  let revStr = strArr.join("");
 
-// if (str === revStr) {
-//   return true;
-// } else {
-//   return false;
-// }
-// };
+  if (str === revStr) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Solution 3
-// const palindrom = (str) => {
-//   let revStr = str.split("").reverse().join("");
-//   return str === revStr;
-// };
+const palindrom3 = (str) => {
+  let revStr = str.split("").reverse().join("");
+  return str === revStr;
+};
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Solution 4
-// const palindrom = (str) => {
-//   return str.split("").every((char, i) => {
-//     return char === str[str.length - i - 1];
-//   });
-// };
+const palindrom = (str) => {
+  return str.split("").every((char, i) => {
+    return char === str[str.length - i - 1];
+  });
+};
 
-// const palindrome = (str) => {
-//   let strArr = str.split("");
-//   let rev = [];
-//   for (let i = strArr.length; i >= 0; i--) {
-//     rev.push(strArr[i]);
-//   }
-
-//   if (rev.join("") === str) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// };
-
-// console.log(palindrome("matt"));
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Solution 5
 const palindrome = (str) => {
-  let strArr = str.replace(/[^\w]/g, "").toLowerCase().split("");
+  let strArr = str.split("");
   let rev = [];
-
   for (let i = strArr.length; i >= 0; i--) {
     rev.push(strArr[i]);
   }
@@ -76,4 +61,4 @@ const palindrome = (str) => {
     return false;
   }
 };
-console.log(palindrome("poop"));
+console.log(palindrome("matt"));

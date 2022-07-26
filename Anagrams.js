@@ -2,38 +2,40 @@
 //One string is anagram of the other if it uses the same characters in the same quantity
 //Only consider characters, not spaces or punctuation
 //Consider capital letter to be the same as lowercase
+////////////////////////////////////////////////////////////////////////////////////////
 
 //Solution 1
-// const anagram = (str1, str2) => {
-//   const charMapA = buildcharMap(str1);
-//   const charMapB = buildcharMap(str2);
+const buildcharMap1 = (str) => {
+  const charMap = {};
+  let newStr = str.replace(/[^\w]/g, "").toLowerCase();
 
-//   if (Object.keys(charMapA).length !== Object.keys(charMapB).length) {
-//     return false;
-//   }
+  for (let char of newStr) {
+    charMap[char] = charMap[charMap] + 1 || 1;
+  }
 
-//   for (let char in charMapA) {
-//     if (charMapA[char] !== charMapB[char]) {
-//       return false;
-//     }
-//   }
-//   return true;
-// };
+  return charMap;
+};
 
-// const buildcharMap = (str) => {
-//   const charMap = {};
-//   let newStr = str.replace(/[^\w]/g, "").toLowerCase();
+const anagram1 = (str1, str2) => {
+  const charMapA = buildcharMap1(str1);
+  const charMapB = buildcharMap1(str2);
 
-//   for (let char of newStr) {
-//     charMap[char] = charMap[charMap] + 1 || 1;
-//   }
+  if (Object.keys(charMapA).length !== Object.keys(charMapB).length) {
+    return false;
+  }
 
-//   return charMap;
-// };
-// console.log(anagram("rail safety", "fairy tales"));
+  for (let char in charMapA) {
+    if (charMapA[char] !== charMapB[char]) {
+      return false;
+    }
+  }
+  return true;
+};
+console.log(anagram1("rail safety", "fairy tales"));
 
+////////////////////////////////////////////////////////////////////////////////////////
 //Solution 2
-const buildcharMap = (str) => {
+const buildcharMap2 = (str) => {
   let charMap = {};
   let newStr = str.replace(/[^\w]/g, "").toLowerCase();
 
@@ -44,7 +46,7 @@ const buildcharMap = (str) => {
   return charMap;
 };
 
-const anagram = (strA, strB) => {
+const anagram2 = (strA, strB) => {
   let charMapA = buildcharMap(strA);
   let charMapB = buildcharMap(strB);
   let strArr = strA.replace(/[^\w]/g, "").toLowerCase();
@@ -60,4 +62,4 @@ const anagram = (strA, strB) => {
   }
   return true;
 };
-console.log(anagram("rail safety", "fairy taless"));
+console.log(anagram2("rail safety", "fairy taless"));

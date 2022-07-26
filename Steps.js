@@ -4,34 +4,18 @@
 //make sure the steps has space on the right hand side
 
 // Solution 1
-// const stair = (n) => {
-//   for (let row = 0; row < n; row++) {
-//     let stair = "";
-
-//     for (let col = 0; col < n; col++) {
-//       if (col <= row) {
-//         stair += "#";
-//       } else {
-//         stair += " ";
-//       }
-//     }
-//     console.log(stair);
-//   }
-// };
-// stair(4);
-
-const steps = (n) => {
+const stair = (n) => {
   for (let row = 0; row < n; row++) {
-    let string = "";
+    let stair = "";
 
     for (let col = 0; col < n; col++) {
       if (col <= row) {
-        string += "#";
+        stair += "#";
       } else {
-        string += " ";
+        stair += " ";
       }
     }
-    console.log(string);
+    console.log(stair);
   }
 };
-steps(4);
+stair(4);

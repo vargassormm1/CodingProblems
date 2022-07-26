@@ -4,7 +4,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 //Solution 1
-const capitalize = (str) => {
+const capitalize1 = (str) => {
   const words = [];
 
   for (let word of str.split(" ")) {
@@ -14,21 +14,21 @@ const capitalize = (str) => {
 
   return words.join(" ");
 };
-console.log(capitalize("a lazy fox"));
+console.log(capitalize1("a lazy fox"));
 
-//Soolution 2
-// const capitalize = (str) => {
-//   let strArr = str.split("");
-//   let newStr = [];
-
-//   for (let i = 0; i < strArr.length; i++) {
-//     if (!strArr[i - 1] || strArr[i - 1] === " ") {
-//       newStr.push(strArr[i].toUpperCase());
-//     } else {
-//       newStr.push(strArr[i]);
-//     }
-//   }
-//   return newStr.join("");
-// };
-// console.log(capitalize("a lazy fox"));
 /////////////////////////////////////////////////////////////////////////////////////////////
+//Soolution 2
+const capitalize2 = (str) => {
+  let strArr = str.split("");
+  let newStr = [];
+
+  for (let i = 0; i < strArr.length; i++) {
+    if (!strArr[i - 1] || strArr[i - 1] === " ") {
+      newStr.push(strArr[i].toUpperCase());
+    } else {
+      newStr.push(strArr[i]);
+    }
+  }
+  return newStr.join("");
+};
+console.log(capitalize2("a lazy fox"));
